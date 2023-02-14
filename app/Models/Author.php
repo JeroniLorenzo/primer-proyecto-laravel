@@ -18,4 +18,9 @@ class Author extends Model
     public function getDescriptionAttribute($value){
         return substr($value, 1, 120);
     }
+
+    public function book()
+    {
+        return $this->belongsToMany(Book::class)->withinTimestamps();
+    }
 }
