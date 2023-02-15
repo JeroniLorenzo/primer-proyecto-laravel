@@ -82,10 +82,7 @@ class BookController extends Controller
         return 'updated';
     }
 
-    public function postBookWithAuthor()
-    {
-        
-    }
+
 
     /**
      * Remove the specified resource from storage.
