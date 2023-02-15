@@ -34,7 +34,8 @@ Route::post('books/{author_id}', [Book::class, 'store']);
 Route::middleware(['auth:sanctum', 'solo_usuario_administrador'])->delete('books/{id}', [Book::class, 'destroy']);
 Route::middleware(['auth:sanctum', 'solo_usuario_administrador'])->put('books', [Book::class, 'update']);
 
-Route::get('authors', [Author::class, 'index']);
+// Route::get('authors', [Author::class, 'index']);
+Route::middleware(['auth:sanctum', 'solo_usuario_administrador'])->get('authors',[Author::class, 'index']);
 Route::get('authors/title={value}', [Author::class, 'getByName']);
 Route::get('authors/{id}', [Author::class, 'getById']);
 Route::post('authors', [Author::class, 'store']);
